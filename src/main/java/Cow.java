@@ -1,30 +1,30 @@
 /**
- * Handles the information (name, age, student number) of students, returning said information and checking to see if two students match
+ * 
  * @author Aarooran Anankan
  * @version 1.0
  */
 
-class Student {
-
+class Cow {
+    
     //Instance Variables
     private String name;
     private int age;
-    private String studentNumber;
+    private double weight;
 
     /**
      * Constructor that sets the values of the instance variables to that of the parameters
-     * @param name the name of the student
-     * @param age the age of the student
-     * @param studentNumber the student number of the student
+     * @param name - the name of the cow
+     * @param age - the age of the cow
+     * @param weight - the weight of the cow
      */
-    public Student(String name, int age, String studentNumber) {
+    public Cow(String name, int age, double weight) {
         this.name = name;
         this.age = age;
-        this.studentNumber = studentNumber;
+        this.weight = weight;
     }
 
     /**
-     * A getter that get's the student's name
+     * A getter that gets the cow's name
      * @return
      */
     public String getName() {
@@ -32,7 +32,7 @@ class Student {
     }
 
     /**
-     * A getter that get's the student's age
+     * A getter that gets the cow's age
      * @return
      */
     public int getAge() {
@@ -40,19 +40,19 @@ class Student {
     }
 
     /**
-     * A getter that get's the student's student number
+     * A getter that gets the cow's weight
      * @return
      */
-    public String getStudentNumber() {
-        return this.studentNumber;
+    public double getWeight() {
+        return this.weight;
     }
 
     @Override
     /**
-     * Returns "name, age - student number"
+     * Returns "name, age - weight"
      */
     public String toString() {
-        return this.name + ", " + this.age + " - " + this.studentNumber;
+        return this.name + ", " + this.age + " - " + this.weight;
     }
 
     @Override
@@ -65,11 +65,11 @@ class Student {
             return false;
         }
         
-        Student student = (Student)obj;
-        if(student.getStudentNumber().equals(this.studentNumber)) {
+        Cow cow = (Cow)obj;
+        if(cow.getName().equals(this.name) && cow.getAge()==(this.age) && cow.getWeight()==(this.weight)) {
             return true;
         }
         
         return false;
     }
- }
+}
